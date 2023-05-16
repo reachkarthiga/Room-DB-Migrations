@@ -48,7 +48,6 @@ abstract class EmployeeDatabase : RoomDatabase() {
 
                 }
 
-        }
 
         @Volatile
         private var INSTANCE: EmployeeDatabase? = null

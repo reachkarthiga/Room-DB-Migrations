@@ -26,7 +26,7 @@ class AddEmployee : AppCompatActivity() {
                     database.dao.insertEmployee(
                         Employee(
                             editText_name.text.toString(),
-                            editText_age.text.toString(),
+                            Integer.parseInt(editText_age.text.toString()),
                             when (editText_gender.text.toString().toUpperCase()) {
                                 "FEMALE" -> "F"
                                 "MALE" -> "M"
