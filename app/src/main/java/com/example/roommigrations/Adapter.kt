@@ -2,6 +2,8 @@ package com.example.roommigrations
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roommigrations.databinding.ListViewItemBinding
 import com.example.roommigrations.models.Employee
@@ -11,7 +13,7 @@ class Adapter(val list :List<Employee>) :RecyclerView.Adapter<RecyclerView.ViewH
     class ViewHolder(val binding : ListViewItemBinding) :RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ViewHolder(ListViewItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return ViewHolder(ListViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
