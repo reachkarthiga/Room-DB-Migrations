@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="Age"
+        android:inputType = "number"
         android:id="@+id/editText_age"
         app:layout_constraintTop_toBottomOf="@id/editText_name"/>
 
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="Salary"
+        android:inputType = "number"
         android:id="@+id/editText_salary"
         app:layout_constraintTop_toBottomOf="@id/editText_designation"/>
 
