@@ -7,7 +7,6 @@ import android.widget.Toast
 import com.example.roommigrations.database.EmployeeDatabase
 import com.example.roommigrations.models.Employee
 import kotlinx.android.synthetic.main.add_employee.*
-import kotlinx.android.synthetic.main.list_view_item.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -51,18 +50,26 @@ class AddEmployee : AppCompatActivity() {
 
         var isError = false
 
-        if (editText_name.text.isEmpty()) {
+        if (editText_name.text.trim().isEmpty()) {
             sendToast("Name cannot be blank")
             isError = true
         }
 
-        if (editText_age.text.isEmpty()) {
+        if (editText_age.text.trim().isEmpty()) {
             sendToast("Age cannot be blank")
             isError = true
         }
 
-        if (editText_gender.text.isEmpty()) {
+        if (editText_gender.text.trim().isEmpty()) {
             sendToast("Age cannot be blank")
+            isError = true
+        }
+
+        if (!(editText_gender.text.trim().toString().toUpperCase() == "FEMALE" ||
+            editText_gender.text.trim().toString().toUpperCase() == "MALE" ||
+            editText_gender.text.trim().toString().toUpperCase() == "OTHERS" ))
+        {
+            sendToast("Gender is not valid")
             isError = true
         }
 
