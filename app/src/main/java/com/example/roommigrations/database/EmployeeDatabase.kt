@@ -18,7 +18,7 @@ abstract class EmployeeDatabase : RoomDatabase() {
             override fun migrate(database: SupportSQLiteDatabase) {
 
                 database.execSQL("CREATE TABLE employeeNew (name TEXT NOT NULL, designation TEXT NOT NULL,id INTEGER NOT NULL, gender TEXT NOT NULL, salary INTEGER NOT NULL,  age TEXT NOT NULL, PRIMARY KEY(id))")
-                database.execSQL("INSERT INTO employeeNew (name,designation,id,  gender, salary, age) Select name ,designation, id , case when gender = \"Female\" then \"F\" when gender = \"Male\" then \"M\"  else \"O\" end as gender, salary, age  from employee")
+                database.execSQL("INSERT INTO employeeNew (name,designation,id,  gender, salary, age) Select name ,designation, id , case when gender = \"FEMALE\" then \"F\" when gender = \"MALE\" then \"M\"  else \"O\" end as gender, salary, age  from employee")
                 database.execSQL("DROP TABLE employee")
                 database.execSQL("ALTER TABLE employeeNew RENAME TO employee")
             }
