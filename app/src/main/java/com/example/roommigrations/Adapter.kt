@@ -11,7 +11,7 @@ class Adapter(val list :List<Employee>) :RecyclerView.Adapter<RecyclerView.ViewH
     class ViewHolder(val binding : ListViewItemBinding) :RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ViewHolder(ListViewItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return ViewHolder(ListViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
