@@ -27,3 +27,16 @@ class Adapter(val list :List<Employee>) :RecyclerView.Adapter<RecyclerView.ViewH
     }
 
 }
+
+
+@BindingAdapter("setGender")
+fun TextView.setGender(gender:String) {
+
+    text = when (gender) {
+        "M" -> "Male"
+        "F" -> "Female"
+        "O" -> "Others"
+        else -> "Gender data not available"
+    }
+
+}

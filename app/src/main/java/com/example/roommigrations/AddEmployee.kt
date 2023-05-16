@@ -28,7 +28,11 @@ class AddEmployee : AppCompatActivity() {
                         Employee(
                             editText_name.text.toString(),
                             editText_age.text.toString(),
-                            editText_gender.text.toString(),
+                            when (editText_gender.text.toString().toUpperCase()) {
+                                "FEMALE" -> "F"
+                                "MALE" -> "M"
+                                else -> "O"
+                            },
                             editText_salary.text.toString().toInt(),
                             editText_designation.text.toString()
                         )
