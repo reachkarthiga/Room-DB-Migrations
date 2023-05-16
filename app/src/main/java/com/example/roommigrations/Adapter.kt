@@ -2,6 +2,8 @@ package com.example.roommigrations
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roommigrations.databinding.ListViewItemBinding
 import com.example.roommigrations.models.Employee
