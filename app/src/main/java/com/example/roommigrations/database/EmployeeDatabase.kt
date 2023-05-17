@@ -1,17 +1,19 @@
 package com.example.roommigrations.database
 
 import android.content.Context
-import androidx.room.Dao
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
+import androidx.room.migration.AutoMigrationSpec
 import com.example.roommigrations.models.Employee
 
 
-@Database(entities = [Employee::class], version = 1, exportSchema = true)
+@Database(entities = [Employee::class], version = 2, exportSchema = true, autoMigrations = [AutoMigration(from = 1, to = 2, spec = EmployeeDatabase.autoMigrationSpecVersion2::class)])
 abstract class EmployeeDatabase : RoomDatabase() {
 
     abstract val dao: EmployeeDao
+
+    @RenameColumn(tableName = "employee", fromColumnName = "name", toColumnName = "employeeName")
+    @DeleteColumn(tableName = "employee" , columnName = "age")
+    class autoMigrationSpecVersion2: AutoMigrationSpec{}
 
     companion object {
         @Volatile
