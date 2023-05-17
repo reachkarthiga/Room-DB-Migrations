@@ -26,6 +26,7 @@ class AddEmployee : AppCompatActivity() {
                     database.dao.insertEmployee(
                         Employee(
                             editText_name.text.toString(),
+                            editText_manager.text.toString(),
                           //  editText_age.text.toString(),
                             editText_gender.text.toString().toUpperCase(),
                             editText_salary.text.toString().toInt(),
@@ -55,7 +56,7 @@ class AddEmployee : AppCompatActivity() {
             isError = true
         }
 
-        if (editText_age.text.trim().isEmpty()) {
+        if (editText_manager.text.trim().isEmpty()) {
             sendToast("Age cannot be blank")
             isError = true
         }

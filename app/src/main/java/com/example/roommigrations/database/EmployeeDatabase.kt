@@ -6,7 +6,7 @@ import androidx.room.migration.AutoMigrationSpec
 import com.example.roommigrations.models.Employee
 
 
-@Database(entities = [Employee::class], version = 2, exportSchema = true, autoMigrations = [AutoMigration(from = 1, to = 2, spec = EmployeeDatabase.autoMigrationSpecVersion2::class)])
+@Database(entities = [Employee::class], version = 3, exportSchema = true, autoMigrations = [AutoMigration(from = 1, to = 2, spec = EmployeeDatabase.autoMigrationSpecVersion2::class), AutoMigration(from = 2, to = 3)])
 abstract class EmployeeDatabase : RoomDatabase() {
 
     abstract val dao: EmployeeDao

@@ -22,11 +22,27 @@ import kotlinx.android.parcel.Parcelize
 
 
 // Version 2
+//@Entity(tableName = "employee")
+//@Parcelize
+//data class Employee(
+//    @ColumnInfo(name = "employeeName")
+//    val name:String,
+//    val gender:String,
+//    val salary: Int,
+//    val designation:String,
+//    @PrimaryKey
+//    val id:Long = System.currentTimeMillis()
+//) :Parcelable
+
+
+// Version 3
 @Entity(tableName = "employee")
 @Parcelize
 data class Employee(
     @ColumnInfo(name = "employeeName")
     val name:String,
+    @ColumnInfo(name = "employeeManger", defaultValue = "unknown")
+    val manager:String,
     val gender:String,
     val salary: Int,
     val designation:String,

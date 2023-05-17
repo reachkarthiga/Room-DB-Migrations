@@ -16,9 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Age"
+        android:hint="Manager"
         android:inputType = "number"
-        android:id="@+id/editText_age"
+        android:id="@+id/editText_manager"
         app:layout_constraintTop_toBottomOf="@id/editText_name"/>
 
     <EditText
@@ -27,7 +27,7 @@
         android:layout_margin="16dp"
         android:hint="Gender"
         android:id="@+id/editText_gender"
-        app:layout_constraintTop_toBottomOf="@id/editText_age"/>
+        app:layout_constraintTop_toBottomOf="@id/editText_manager"/>
 
     <EditText
         android:layout_width="match_parent"
