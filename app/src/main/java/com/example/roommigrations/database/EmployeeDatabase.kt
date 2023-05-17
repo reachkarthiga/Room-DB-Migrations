@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 import com.example.roommigrations.models.Employee
 
 
-@Database(entities = [Employee::class], version = 1, exportSchema = false)
+@Database(entities = [Employee::class], version = 1, exportSchema = true)
 abstract class EmployeeDatabase : RoomDatabase() {
 
     abstract val dao: EmployeeDao
